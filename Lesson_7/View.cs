@@ -5,12 +5,12 @@ namespace Lesson_7;
 internal class View {
 
     private PhoneBook phoneBook;
-    private Scanner scanner;
+    private Scanner scanner; 
 
     public View(PhoneBook phoneBook) {
         this.phoneBook = phoneBook;
         this.scanner = new Scanner(System.in);
-    }
+    } 
 
     public void start() {
         bool running = true;

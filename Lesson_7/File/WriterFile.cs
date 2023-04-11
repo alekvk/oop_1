@@ -5,15 +5,20 @@ namespace Lesson_7;
 internal class WriterFile {
     
     public static void writeFile(List<Contact> contacts, String fileName) {
-        try (PrintWriter writer = new PrintWriter(new File(fileName))) {
-            
+        try 
+         {
+            //PrintWriter writer = new PrintWriter(new File(fileName);
+            // 
+            StreamWriter writer=new StreamWriter(fileName);
+
             /* Создаем интерфейсную переменную "а". 
                Класс BulderStringComma реализует метод интерфейса 
                InterBuilderString (создание объекта StringBuilder)
                с разделителем в виде запятой (comma) */
 
             InterBuilderStringComma a = new BuilderStringComma();
-            writer.write((a.BuildStringComma(contacts)).ToString());
+            writer.Write((a.BuildStringComma(contacts)).ToString());
+            //writer.write((a.BuildStringComma(contacts)).ToString());
             
         } catch (FileNotFoundException ex) 
         {

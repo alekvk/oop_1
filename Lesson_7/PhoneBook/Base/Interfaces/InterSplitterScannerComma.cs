@@ -3,7 +3,7 @@ namespace Lesson_7;
 
 public interface InterSplitterScannerComma {
     // Метод создания объекта List<Contact>
-    public List<Contact> SplitStringComma(Scanner scanner);
+    public List<Contact> SplitStringComma(String scanner);
 }
 
 

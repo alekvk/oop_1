@@ -5,16 +5,17 @@ namespace Lesson_7;
 public class SplitterScannerComma: InterSplitterScannerComma {
     
     
-    public override List<Contact> SplitStringComma(Scanner scanner) {
+    public override List<Contact> SplitStringComma(String txt) {
         List<Contact> contacts = new List<Contact>();
-       
+        
 
-        while (scanner.hasNextLine()) {
+        /*while (scanner.hasNextLine()) {
             String[] fields = scanner.nextLine().split(",");
             Contact contact = new Contact(fields[0], fields[1], fields[2], fields[3], fields[4], fields[5]);
             contacts.Add(contact);
         }
         return contacts;
+        */
     }
 }
 

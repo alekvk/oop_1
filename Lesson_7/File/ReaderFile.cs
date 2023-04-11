@@ -1,3 +1,5 @@
+using System.Text;
+
 using Lesson_7;
 namespace Lesson_7;
 
@@ -10,17 +12,24 @@ internal class ReaderFile {
         
         List<Contact> contacts = new List<Contact>();
               
-        try (Scanner scanner = new Scanner(new File(fileName))) {
+        try  
+        {
+
+            //Scanner scanner = new Scanner(new File(fileName))
+
+            StreamReader reader = new StreamReader(fileName);
+            String text = reader.ReadToEnd();  
+
+
             /* Создаем интерфейсную переменную "а". 
-               Класс SplitterScannerComma реализует метод интерфейса 
-               InterSplitterScannerComma (создание объекта ArrayList<Contact> )
+               Класс SplitterComma реализует метод интерфейса 
+               InterSplitterComma (создание объекта ArrayList<Contact> )
             */
             InterSplitterScannerComma a = new SplitterScannerComma();
-            contacts = a.SplitStringComma(scanner);
-            
-                              
+            contacts = a.SplitStringComma(text);
+        
                
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException ex) {
             Console.WriteLine("Файл не найден: " + fileName);
         }
         
