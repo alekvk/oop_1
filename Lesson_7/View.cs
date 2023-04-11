@@ -5,11 +5,11 @@ namespace Lesson_7;
 internal class View {
 
     private PhoneBook phoneBook;
-    private Scanner scanner; 
+    //private Scanner scanner; 
 
     public View(PhoneBook phoneBook) {
         this.phoneBook = phoneBook;
-        this.scanner = new Scanner(System.in);
+        //this.scanner = new Scanner(System.in);
     } 
 
     public void start() {
@@ -26,8 +26,7 @@ internal class View {
             Console.WriteLine("9. Экспорт контактов в файл");
             Console.WriteLine("0. Выход");
 
-            int choice = scanner.nextInt();
-            scanner.nextLine();
+            int choice = Convert.ToInt32(Console.ReadLine());
 
             switch (choice) {
                 case 1:
@@ -35,65 +34,65 @@ internal class View {
                     break;
                 case 2:
                     Console.WriteLine("Введите id (любое число): ");
-                    String idContact = scanner.nextLine();
+                    String? idContact = Console.ReadLine();
                     Console.WriteLine("Введите имя: ");
-                    String firstName = scanner.nextLine();
+                    String? firstName = Console.ReadLine();
                     Console.WriteLine("Введите отчество: ");
-                    String patronymic = scanner.nextLine();
+                    String? patronymic = Console.ReadLine();
                     Console.WriteLine("Введите фамилию: ");
-                    String lastName = scanner.nextLine();
+                    String? lastName = Console.ReadLine();
                     Console.WriteLine("Введите телефон: ");
-                    String phone = scanner.nextLine();
+                    String? phone = Console.ReadLine();
                     Console.WriteLine("Введите комментарий: ");
-                    String comment = scanner.nextLine();
+                    String? comment = Console.ReadLine();
                     Contact contact = new Contact(idContact, firstName, patronymic, lastName, phone, comment);
                     phoneBook.addContact(contact);
                     break;
                 case 3:
                     Console.WriteLine("Введите id удаляемого контакта: ");
-                    String idContactDelete = scanner.nextLine();
+                    String? idContactDelete = Console.ReadLine();
                     phoneBook.removeContact(idContactDelete);
                     break;
                 case 4:
                     Console.WriteLine("Введите id обновляемого контакта: ");
-                    String idContactUpdate = scanner.nextLine();
+                    String? idContactUpdate = Console.ReadLine();
                     Console.WriteLine("Введите новое имя: ");
-                    String newFirstName = scanner.nextLine();
+                    String? newFirstName = Console.ReadLine();
                     Console.WriteLine("Введите новое отчество: ");
-                    String newPatronymic = scanner.nextLine();
+                    String? newPatronymic = Console.ReadLine();
                     Console.WriteLine("Введите новую фамилию: ");
-                    String newLastName = scanner.nextLine();
+                    String? newLastName = Console.ReadLine();
                     Console.WriteLine("Введите новый телефон: ");
-                    String newPhone = scanner.nextLine();
+                    String? newPhone = Console.ReadLine();
                     Console.WriteLine("Введите новый комментарий: ");
-                    String newComment = scanner.nextLine();
+                    String? newComment = Console.ReadLine();
                     phoneBook.updateContact(idContactUpdate, newFirstName, newPatronymic, newLastName, newPhone, newComment);
                     break;
                 case 5:
                     Console.WriteLine("Введите телефон для поиска:");
-                    String searchPhone = scanner.nextLine();
+                    String? searchPhone = Console.ReadLine();
                     phoneBook.searchByPhone(searchPhone);
                     break;
                 case 6:
                     Console.WriteLine("Введите имя для поиска:");
-                    String firstName_ = scanner.nextLine();
+                    String? firstName_ = Console.ReadLine();
                     phoneBook.searchByFirstName(firstName_);
                     break;
                 
                 case 7:
                     Console.WriteLine("Введите имя для поиска:");
-                    String lastName_ = scanner.nextLine();
+                    String? lastName_ = Console.ReadLine();
                     phoneBook.searchByLastName(lastName_);
                     break;
  
                 case 8:
                     Console.WriteLine("Введите имя файла для импорта данных:");
-                    String fileName = scanner.nextLine();
+                    String? fileName = Console.ReadLine();
                     phoneBook.importFromFile(fileName);
                     break;
                 case 9:
                     Console.WriteLine("Введите имя файла для экспорта данных:");
-                    fileName = scanner.nextLine();
+                    fileName = Console.ReadLine();
                     phoneBook.exportToFile(fileName);
                     break;
                 case 0:
@@ -101,6 +100,7 @@ internal class View {
                     break;
                 default:
                     Console.WriteLine("Неверный выбор");
+                    break;
 
             }
         }

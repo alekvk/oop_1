@@ -29,7 +29,7 @@ internal class ReaderFile {
             contacts = a.SplitStringComma(text);
         
                
-        } catch (FileNotFoundException ex) {
+        } catch (FileNotFoundException ) {
             Console.WriteLine("Файл не найден: " + fileName);
         }
         

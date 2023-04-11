@@ -3,19 +3,17 @@ namespace Lesson_7;
 
 
 public class SplitterScannerComma: InterSplitterScannerComma {
-    
-    
-    public override List<Contact> SplitStringComma(String txt) {
+  
+    public List<Contact> SplitStringComma(String a) {
         List<Contact> contacts = new List<Contact>();
-        
-
-        /*while (scanner.hasNextLine()) {
-            String[] fields = scanner.nextLine().split(",");
-            Contact contact = new Contact(fields[0], fields[1], fields[2], fields[3], fields[4], fields[5]);
-            contacts.Add(contact);
-        }
-        return contacts;
-        */
+        String[] lines = a.Split("\n");
+        foreach (var line in lines)
+        {
+           String [] fields = line.Split(",");
+           Contact contact = new Contact(fields[0], fields[1], fields[2], fields[3], fields[4], fields[5]);
+           contacts.Add(contact);
+        } 
+        return contacts; 
     }
 }
 
